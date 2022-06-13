@@ -1,3 +1,52 @@
+<!-- Styling -->
+<style>
+    .cv {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cv .cv_image {
+        width: 100px; 
+        height: 100px; 
+        border-radius: 100%;
+        margin: auto;
+    }
+
+    .heading {
+        color: #ff8906;
+    }
+
+    .colored-text {
+        color: #094067;
+        font-size: 16px;
+        margin-left: ;
+    }
+    
+    .margined {
+        margin-left: 12px;
+    }
+
+    .link {
+        color: #094067;
+    }
+
+    .link:hover {
+        color: #ff8906;
+    }
+
+</style>
+
+<!-- markdown  -->
+
+<div class="cv" >
+    <img   
+        class="cv_image"
+        src="./profile_image.jpeg" 
+    />
+</div>
+
 ### Name  {#identifier .heading}
 <span class="colored-text margined">  
     Ahmed Saadun 
