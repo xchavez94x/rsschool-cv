@@ -1,55 +1,5 @@
-<!-- Styling -->
-<!-- <style>
-    .cv {
-        width: 100%;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .cv .cv_image {
-        width: 100px; 
-        height: 100px; 
-        border-radius: 100%;
-        margin: auto;
-    }
+### Ahmed Saadun   
 
-    .heading {
-        color: #ff8906;
-    }
-
-    .colored-text {
-        color: #094067;
-        font-size: 16px;
-        margin-left: ;
-    }
-    
-    .margined {
-        margin-left: 12px;
-    }
-
-    .link {
-        color: #094067;
-    }
-
-    .link:hover {
-        color: #ff8906;
-    }
-
-</style> -->
-
-<!-- markdown  -->
-
-
-<img   
-    class="cv_image"
-    src="./profile_image.jpeg" 
-    style="width: 100px; height: 100px; border-radius: 100%;"
-/>
-
-
-### Name  
-Ahmed Saadun 
 
 <hr >
 
@@ -85,7 +35,7 @@ Originally i'm from Iraq but i'd lived in Ukraine since 2013. i've started learn
 
 ### Code examples
 
-```
+```js:
 const path = require('path');
 
 const express = require('express');
@@ -93,71 +43,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const graphqlHttp = require('express-graphql');
+const cors = require('cors');
 
 const graphqlSchema = require('./graphql/schema');
 const graphqlResolver = require('./graphql/resolvers');
-const auth = require('./middleware/auth');
-const { clearImage } = require('./util/file');
 
 const app = express();
 
-const fileStorage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'images');
-  },
-  filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + '-' + file.originalname);
-  }
-});
-
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === 'image/png' ||
-    file.mimetype === 'image/jpg' ||
-    file.mimetype === 'image/jpeg'
-  ) {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
-
-// app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
-app.use(bodyParser.json()); // application/json
-app.use(
-  multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
-);
-app.use('/images', express.static(path.join(__dirname, 'images')));
-
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'OPTIONS, GET, POST, PUT, PATCH, DELETE'
-  );
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  if (req.method === 'OPTIONS') {
-    return res.sendStatus(200);
-  }
-  next();
-});
-
-app.use(auth);
-
-app.put('/post-image', (req, res, next) => {
-  if (!req.isAuth) {
-    throw new Error('Not authenticated!');
-  }
-  if (!req.file) {
-    return res.status(200).json({ message: 'No file provided!' });
-  }
-  if (req.body.oldPath) {
-    clearImage(req.body.oldPath);
-  }
-  return res
-    .status(201)
-    .json({ message: 'File stored.', filePath: req.file.path });
-});
+app.use(bodyParser.json()); 
 
 app.use(
   '/graphql',
@@ -186,16 +79,9 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(
-    'mongodb+srv://maximilian:9u4biljMQc4jjqbe@cluster0-ntrwp.mongodb.net/messages?retryWrites=true'
-  )
+  .connect(process.env.DB_URI)
   .then(result => {
     app.listen(8080);
   })
-  .catch(err => console.log(err));
-
-
-
-
-```
+  .catch(err => console.log(err));```
 
