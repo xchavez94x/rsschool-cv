@@ -1,8 +1,10 @@
+<img 
+    src="./profile_image.jpeg" 
+    style="width: 100px; height: 100px; border-radius: 100%;"
+/>
+
 ### Ahmed Saadun   
-
-
 <hr >
-
 
 ### Contacts 
 
@@ -33,6 +35,23 @@ Originally i'm from Iraq but i'd lived in Ukraine since 2013. i've started learn
 
 <hr/>
 
+### Education
+* National University of Pharmacy at Kharkiv.
+* ITStep academy Kharkiv.
+* Academind by Maximilian Schwarszmuller.
+* FreeCodeCamp
+
+<hr />
+
+### Languages spoken
+
+* Arabic - Native
+* English - Upper intermediate
+* Russian 
+
+<hr />
+
+
 ### Code example
 
 ##### indesx.js
@@ -46,12 +65,14 @@ const mongoose = require('mongoose');
 const multer = require('multer');
 const graphqlHttp = require('express-graphql');
 const cors = require('cors');
+require('dotenv').config();
 
 const graphqlSchema = require('./graphql/schema');
 const graphqlResolver = require('./graphql/resolvers');
 
 const app = express();
-const port = process.env.DB_URI || 3000
+const port = process.env.DB_URI || 3000;
+const mongodbURI = process.env.MONGODB_URI;
 
 app.use(bodyParser.json()); 
 
@@ -82,11 +103,10 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect()
+  .connect(mongodbURI)
   .then(result => {
     app.listen(port);
   })
   .catch(err => console.log(err));
   ```
 
-#### 
