@@ -19,7 +19,7 @@ Originally i'm from Iraq but i'd lived in Ukraine since 2013. i've started learn
 
 <hr />
 
-### skills 
+### Skills 
 
 * HTML5, 
 * CSS3, Sass, Less, Boostrap, 
@@ -33,9 +33,11 @@ Originally i'm from Iraq but i'd lived in Ukraine since 2013. i've started learn
 
 <hr/>
 
-### Code examples
+### Code example
 
-```js:
+##### indesx.js
+
+```js
 const path = require('path');
 
 const express = require('express');
@@ -49,6 +51,7 @@ const graphqlSchema = require('./graphql/schema');
 const graphqlResolver = require('./graphql/resolvers');
 
 const app = express();
+const port = process.env.DB_URI || 3000
 
 app.use(bodyParser.json()); 
 
@@ -79,9 +82,11 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(process.env.DB_URI)
+  .connect()
   .then(result => {
-    app.listen(8080);
+    app.listen(port);
   })
-  .catch(err => console.log(err));```
+  .catch(err => console.log(err));
+  ```
 
+#### 
