@@ -20,6 +20,7 @@
 - Some basic algorithms knowledge (search and sort algorithms) 
 ---
 ## Code example
+
 ```javascript
     import elements from "./elements.mjs";
     let cart = []
@@ -61,7 +62,6 @@
 - Web development 0.7 year.
 ---
 ## Education
-- National university of Pharmacy in Kharkiv.
 - Kahrkiv ITStep academy.
 - FreeCodeCamp.
 - Udemy.
