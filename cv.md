@@ -1,9 +1,10 @@
-## Name
+## About me
 - Ahmed Saadoon
+- Highly motivated, always eager to learn new things, Although i sit at PC, i also  like to make a new friends. 
 ---
 ## Contacts 
 #### Phone & Email
-- +19714350118
+- +1-971-435-0118
 - blackshock4@gmail.com
 #### Social
 - [Github](https://github.com/xchavez94x)
