@@ -1,7 +1,8 @@
+/* flex box classes */
+
 .center {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .flex-direction-column {
@@ -11,6 +12,40 @@
 .flex-direction-row {
     flex-direction: row;
 }
+
+.flex-wrap-true {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-false {
+    flex-wrap: nowrap;
+}
+
+.flex-justify-center {
+    justify-content: center;
+}
+
+.flex-justify-start {
+    justify-content: flex-start;
+}
+
+.flex-justify-end {
+    justify-content: flex-end;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-align-start {
+    align-items: flex-start;
+}
+
+.flex-align-end {
+    align-items: flex-end;
+}
+
+/* custom width */
 
 .w-1 {
     max-width: 10rem;
@@ -56,12 +91,8 @@ h5 {
     font-size: 1.7rem;
 }
 
-.back-red {
-    background-color: #ff7c7c;
+section ul {
+    margin: 1.2em;
 }
 
-@media screen and (max-width: 564px) {
-    .back-red {
-        background-color: #f84141;
-    }
-}
+@media screen and (max-width: 564px) {}
