@@ -1,3 +1,28 @@
+html {
+    font-size: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #252525;
+    color: #e4e4e4
+}
+
+section {
+    margin: 2rem auto;
+}
+
+ul li {
+    font-size: 1.2em;
+    list-style-type: none;
+}
+
+a {
+    color: #e4e4e4;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #edf586;
+}
+
 /* flex box classes */
 
 .center {
@@ -91,8 +116,15 @@ h5 {
     font-size: 1.7rem;
 }
 
-section ul {
-    margin: 1.2em;
+section ul,
+section p {
+    margin: 1.2em 0;
+}
+
+
+
+.container {
+    border: 2px black solid;
 }
 
 @media screen and (max-width: 564px) {}
