@@ -1,1 +1,1 @@
-[Check CV](https://xchavez94x.github.io/rsschool-cv/index.html)
+[Check CV](https://xchavez94x.github.io/rsschool-cv/)

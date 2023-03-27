@@ -9,9 +9,18 @@ section {
     margin: 2rem auto;
 }
 
+section::after {
+    display: flex;
+    content: ' ';
+    width: 100%;
+    height: 1px;
+    background-color: #e4e4e4;
+}
+
 ul li {
     font-size: 1.2em;
     list-style-type: none;
+    margin: 1em 0;
 }
 
 a {
@@ -21,6 +30,15 @@ a {
 
 a:hover {
     color: #edf586;
+}
+
+section ul,
+section p {
+    margin: 1.2em 0;
+}
+
+.container {
+    border: 2px black solid;
 }
 
 /* flex box classes */
@@ -116,15 +134,28 @@ h5 {
     font-size: 1.7rem;
 }
 
-section ul,
-section p {
-    margin: 1.2em 0;
+
+
+@media screen and (max-width: 1080px) {}
+
+@media screen and (max-width: 746px) {
+    .container section {
+        margin: 1em 1em;
+    }
+
+    a {
+        margin: 0;
+    }
+
+
 }
 
+@media screen and (max-width: 564px) {
+
+    .container header {
+        align-self: flex-start;
+        margin: 1em 1em;
+    }
 
 
-.container {
-    border: 2px black solid;
 }
-
-@media screen and (max-width: 564px) {}
